@@ -51,6 +51,7 @@ h_conv5 = tf.nn.relu(conv2d(h_conv4, W_conv5, 1) + b_conv5)
 W_fc1 = weight_variable([1152, 1164])
 b_fc1 = bias_variable([1164])
 
+
 h_conv5_flat = tf.reshape(h_conv5, [-1, 1152])
 h_fc1 = tf.nn.relu(tf.matmul(h_conv5_flat, W_fc1) + b_fc1)
 
@@ -85,4 +86,4 @@ h_fc4_drop = tf.nn.dropout(h_fc4, keep_prob)
 W_fc5 = weight_variable([10, 1])
 b_fc5 = bias_variable([1])
 
-y = tf.mul((tf.matmul(h_fc4_drop, W_fc5) + b_fc5), 2) #scale the atan output
+y = tf.matmul(h_fc4_drop, W_fc5) + b_fc5#scale the atan output

@@ -8,7 +8,7 @@ sess = tf.InteractiveSession()
 saver = tf.train.Saver()
 saver.restore(sess, "save/model.ckpt")
 
-img = cv2.imread('steering_wheel_image.jpg',0)
+img = cv2.imread('steering_wheel_image1.jpg',0)
 rows,cols = img.shape
 smoothed_angle = 0
 i = 0
