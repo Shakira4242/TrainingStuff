@@ -83,7 +83,7 @@ h_fc4 = tf.nn.relu(tf.matmul(h_fc3_drop, W_fc4) + b_fc4)
 h_fc4_drop = tf.nn.dropout(h_fc4, keep_prob)
 
 #Output
-W_fc5 = weight_variable([10, 1])
-b_fc5 = bias_variable([1])
+W_fc5 = weight_variable([10, 2])
+b_fc5 = bias_variable([2])
 
-y = tf.matmul(h_fc4_drop, W_fc5) + b_fc5#scale the atan output
+y = tf.atan(tf.matmul(h_fc4_drop, W_fc5) + b_fc5) #scale the atan output
